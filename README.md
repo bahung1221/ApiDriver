@@ -1,9 +1,9 @@
-#API Driver For Laravel 5.2
+# API Driver For Laravel 5.2
 ---------------------------
 
 An Eloquent model and Query builder with support for Restful Api Server, using the original Laravel API. This library extends the original Laravel classes, so it uses exactly the same methods.
 
-###Installation
+### Installation
 ---------------
 Installation using composer:
 ```bash
@@ -15,7 +15,7 @@ And add the service provider in `config/app.php`:
 Hungnguyenba\Apidriver\DatabaseServiceProvider::class
 ```
 
-###Configuration
+### Configuration
 ----------------
 Change your default database connection name in `config/database.php`:
 
@@ -34,7 +34,7 @@ And add a new api server connection:
 ]
 ```
 
-###Usage
+### Usage
 --------
 
 Create new Model extend Api Eloquent Model:
