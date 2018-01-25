@@ -119,4 +119,22 @@ class ApiGrammar extends Grammar
         return $conditions ?? [];
     }
 
+    /**
+     * Compile a delete statement into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @return string
+     */
+    public function compileDelete(Builder $query)
+    {
+        if (empty($query)) {
+            return [];
+        }
+
+        // Get condition for delete
+        $conditions = $this->compileSelect($query);
+
+        return $conditions ?? [];
+    }
+
 }

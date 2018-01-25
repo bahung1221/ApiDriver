@@ -119,6 +119,27 @@ class ApiConnection extends Connection
     }
 
     /**
+     * Run a delete statement against the database.
+     *
+     * @param  string  $query
+     * @param  array   $bindings
+     * @return int
+     */
+    public function delete($query, $bindings = [])
+    {
+        if (empty($query) || empty($query['api']) || empty($query['id'])) {
+            return 0;
+        }
+
+        $api = $query['api'];
+        $id = $query['id'];
+
+        $res = $this->deleteById($api, $id);
+        
+        return empty($res) ? 0 : 1;
+    }
+
+    /**
      * Get a schema builder instance for the connection.
      *
      * @return \Illuminate\Database\Schema\Builder
