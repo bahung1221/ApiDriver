@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Model extends BaseModel
 {
+    protected $guarded = array();
     /**
      * @inheritDoc Illuminate\Database\Eloquent\Concerns\HasTimestamps
      * Indicates if the model should be timestamped.
