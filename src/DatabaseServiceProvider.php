@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Database;
+namespace Hungnguyenba\Apidriver;
 
-use App\Database\ConnectionFactory;
+use Hungnguyenba\Apidriver\ConnectionFactory;
 use Illuminate\Database\DatabaseServiceProvider as BaseDatabaseServiceProvider;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\DatabaseManager;

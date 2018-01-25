@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Database;
+namespace Hungnguyenba\Apidriver\Processor;
 
 use Illuminate\Database\Query\Grammars\Grammar;
 use Illuminate\Database\Query\Processors\Processor;

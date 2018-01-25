@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Database;
+namespace Hungnguyenba\Apidriver\Connection;
 
 use Illuminate\Database\Connection;
-use Hungnguyen\Apiconnectionservice\Service;
+use Hungnguyenba\Apiconnectionservice\Service;
+use Hungnguyenba\Apidriver\Grammar\ApiGrammar;
+use Hungnguyenba\Apidriver\Processor\ApiProcessor;
 
 class ApiConnection extends Connection
 {

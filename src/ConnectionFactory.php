@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Database;
+namespace Hungnguyenba\Apidriver;
 
 use Illuminate\Database\Connectors\ConnectionFactory as BaseConnectionFactory;
+use Hungnguyenba\Apidriver\Connection\ApiConnection;
+use Hungnguyenba\Apidriver\Connector\ApiConnector;
 
 class ConnectionFactory extends BaseConnectionFactory
 {

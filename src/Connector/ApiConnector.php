@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Database;
+namespace Hungnguyenba\Apidriver\Connector;
 
 use Illuminate\Database\Connectors\Connector;
 use Illuminate\Database\Connectors\ConnectorInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Database;
+namespace Hungnguyenba\Apidriver\Model;
 
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Model as BaseModel;
