@@ -3,7 +3,7 @@
     "description": "A Api based Eloquent model and Query builder for laravel (Api Eloquent)",
     "type": "library",
     "require": {
-        "hungnguyenba/apiconnectionservice": "^0.0.4"
+        "hungnguyenba/apiconnectionservice": "^0.0.5"
     },
     "authors": [
         {

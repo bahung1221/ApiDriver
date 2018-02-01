@@ -24,12 +24,15 @@ class ApiConnection extends Connection
         if (empty($query) || empty($query['api'])) {
             return [];
         }
+
         // Get api string from query and unset it from query
         $api = $query['api'];
         unset($query['api']);
+
         // Get flag for get metadata and unset it from query
         $isGetMetaData = ! empty($query['isGetMetaData']) && $query['isGetMetaData'] == 1 ? true : false;
         unset($query['isGetMetaData']);
+        
         // Execute get request from api and receive response data
         $data = $this->get($api, $query, $isGetMetaData);
         // Check flag for get metadata
