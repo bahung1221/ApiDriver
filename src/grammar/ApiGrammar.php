@@ -37,10 +37,13 @@ class ApiGrammar extends Grammar
         if (empty($query->from)) {
             return [];
         }
+
         // Get api string from query
         $api['api'] = $query->from;
+        
         // get conditions from wheres attribute
         $conditions = head($query->wheres);
+        
         // Check if not nested condition
         if (empty($conditions['query'])) {
 

@@ -47,6 +47,7 @@ class ApiConnection extends Connection
             $res['to'] = $data['to'];
             $data = $data['data'];
         }
+
         // Validate data and set index
         if (! empty($data)) {
             $attribute = isset($options['index_by']) ? $options['index_by'] : '';
@@ -119,6 +120,16 @@ class ApiConnection extends Connection
         $res = $this->put($api, $id, $query);
 
         return empty($res) ? 0 : 1;
+    }
+
+    public function massUpdate(string $api, $ids, array $values)
+    {
+        if (empty($api)) {
+            return [];
+        }
+        
+        $res = $this->put($api, $ids, $values);
+        return $res ?? [];
     }
 
     /**

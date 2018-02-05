@@ -2,9 +2,9 @@
 
 namespace Hungnguyenba\Apidriver\Model;
 
-use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Eloquent\Model as BaseModel;
-use Illuminate\Database\Eloquent\Builder;
+use Hungnguyenba\Apidriver\Eloquent\Builder;
+use Hungnguyenba\Apidriver\Query\Builder as QueryBuilder;
 
 class Model extends BaseModel
 {
