@@ -37,7 +37,7 @@ class ApiGrammar extends Grammar
         if (empty($query->from)) {
             return [];
         }
-
+        
         // Get api string from query
         $api['api'] = $query->from;
         
@@ -110,7 +110,7 @@ class ApiGrammar extends Grammar
         if (empty($query) || empty($values)) {
             return [];
         }
-
+        
         // Get condition for update
         $conditions = $this->compileSelect($query);
 

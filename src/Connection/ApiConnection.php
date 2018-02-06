@@ -122,6 +122,14 @@ class ApiConnection extends Connection
         return empty($res) ? 0 : 1;
     }
 
+    /**
+     * Execute mass update
+     *
+     * @param string $api
+     * @param mixed $ids
+     * @param array $values
+     * @return void
+     */
     public function massUpdate(string $api, $ids, array $values)
     {
         if (empty($api)) {
@@ -133,6 +141,28 @@ class ApiConnection extends Connection
     }
 
     /**
+     * Execute put & post from incoming models
+     *
+     * @param string $api
+     * @param array $models
+     * @return void
+     */
+    public function batchUpdate(string $api, array $models)
+    {
+        if (empty($models) || empty($api)) {
+            return [];
+        }
+
+        $putData = $models['putData'] ?? [];
+        $ids = ids($putData);
+        $postData = $models['postData'] ?? [];
+
+        $res[] = $this->put($api, $ids, $putData);
+        $res[] = $this->post($api, $postData);
+        return $res ?? [];
+    }
+
+    /**
      * Run a delete statement against the database.
      *
      * @param  string  $query
@@ -140,7 +170,7 @@ class ApiConnection extends Connection
      * @return int
      */
     public function delete($query, $bindings = [])
-    {
+    {   
         if (empty($query) || empty($query['api']) || empty($query['id'])) {
             return 0;
         }

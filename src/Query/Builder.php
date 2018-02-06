@@ -6,6 +6,12 @@ use Illuminate\Database\Query\Builder as BaseQueryBuilder;
 
 class Builder extends BaseQueryBuilder
 {
+    /**
+     * Send mass update data into connection
+     *
+     * @param array $values
+     * @return void
+     */
     public function massUpdate(array $values)
     {
         $records = $this->get();
@@ -17,5 +23,22 @@ class Builder extends BaseQueryBuilder
         }
 
         return $this->connection->massUpdate($api, $ids, $updateData);
+    }
+
+    /**
+     * Send batch update & insert data into connection
+     *
+     * @param array $models
+     * @return void
+     */
+    public function batchUpdate(array $models)
+    {
+        if (empty ($models)) {
+            return [];
+        }
+
+        $api = $this->from ?? '';
+        
+        return $this->connection->batchUpdate($api, $models);
     }
 }
