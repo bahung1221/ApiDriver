@@ -27,18 +27,4 @@ class Builder extends BaseEloquentBuilder
     {
         return $this->toBase()->batchUpdate($this->addUpdatedAtColumn($models));
     }
-
-    
-    /**
-     * Execute the query and get the first result.
-     *
-     * @param  array  $columns
-     * @return \Illuminate\Database\Eloquent\Model|static|null
-     */
-    public function first($columns = ['*'])
-    {
-        $model = $this->take(1)->get($columns)->first();
-
-        return is_null($model) ? $this->model->newCollection([]) : $model;
-    }
 }
