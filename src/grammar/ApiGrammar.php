@@ -61,6 +61,11 @@ class ApiGrammar extends Grammar
         // Loop and get conditions as array
         foreach ($conditions as $key => $condition) {
             $column = $condition['column'];
+
+            if (empty($condition['operator'])) {
+                continue;
+            }
+
             $operator = $condition['operator'] === '=' ? '' : $condition['operator']; 
             $api[$column . $operator] = $condition['value'] ?? null;
         }
