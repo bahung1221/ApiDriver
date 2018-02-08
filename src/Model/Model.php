@@ -89,7 +89,6 @@ class Model extends BaseModel
 
         if (! empty($meta)) {
             $meta = $instance->newCollection($meta);
-            $items = $instance->newCollection($items);
             $meta['data'] = $items;
         }
 
