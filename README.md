@@ -1,3 +1,9 @@
+# NOTE:
+This package was only used in my personal projects with special use cases, so you shouldn't use it. I will rewrite it for common use cases when i have rest time.
+Thank you!
+
+----------------------
+
 # API Driver For Laravel 5.2
 
 An Eloquent model and Query builder with support for Restful Api Server, using the original Laravel API. This library extends the original Laravel classes, so it uses exactly the same methods.
